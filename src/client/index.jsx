@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tweets from './tweets.js';
+import tweets from './tweets.js';
+import Showtweets from 'showtweets';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        tweets
+          <Showtweets tweets = {tweets}/>
       </div>
     );
   }
