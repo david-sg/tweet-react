@@ -12,7 +12,16 @@ class Eachtweet extends React.Component {
   
       const tweety = this.props.tweets.map( tweet => {
         console.log(tweet.user.screen_name)
-        return <li>{tweet.user.screen_name} {tweet.text}</li>
+        return (
+        <div> 
+        <img src={tweet.user.profile_image_url} width="15px" className="float-left"/>
+          <h2>{tweet.user.screen_name}</h2>{tweet.created_at}<br/>
+         {tweet.text} <br/>
+         Retweets: {tweet.retweet_count} | Likes: {tweet.favorite_count}
+         <br/>
+      
+          </div>
+        )
       });
       return (
         <div>
