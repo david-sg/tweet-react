@@ -6,6 +6,8 @@ process.env.PORT = process.env.PORT || 3000;
 
 const app = express();
 
+
+
 /*
  * =======================================================================
  * ================ REACT config                     =====================
@@ -20,8 +22,8 @@ app.use('/', express.static('public'));
  * =======================================================================
  */
 
-app.get('/banana', (request, response)=>{
-  response.send("ehllo");
+app.get('/banana', (request, response) => {
+    response.send("ehllo");
 });
 
 /*
@@ -31,8 +33,18 @@ app.get('/banana', (request, response)=>{
  */
 
 app.get('/react', (req, res) => {
-  const myHtml = `
+    const myHtml = `
     <html>
+    <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="./style.css"
+/>
       <body>
         <h1>Wow, react</h1>
         <div id="app"></div>
@@ -40,7 +52,7 @@ app.get('/react', (req, res) => {
       </body>
     </html>
   `;
-  res.send( myHtml );
+    res.send(myHtml);
 });
 
 /*
@@ -50,5 +62,5 @@ app.get('/react', (req, res) => {
  */
 
 app.listen(process.env.PORT, () => {
-  console.log(`ssssserver is now running on http://localhost:${process.env.PORT}`);
+    console.log(`ssssserver is now running on http://localhost:${process.env.PORT}`);
 });
